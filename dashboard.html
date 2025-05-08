@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Painel Administrativo</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('admin.manage_projects') }}">Gerenciar Projetos</a></li>
+            <li><a href="{{ url_for('admin.manage_users') }}">Gerenciar Usuários</a></li>
+            <li><a href="{{ url_for('admin.view_contact_messages') }}">Mensagens de Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        <h2>Bem-vindo ao Painel Administrativo</h2>
+        <p>Selecione uma opção no menu para começar.</p>
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Portfólio</p>
+    </footer>
+</body>
+</html>
+

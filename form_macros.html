@@ -1,0 +1,17 @@
+{# macros/form_macros.html #}
+{% macro render_field(field, label_visible=true, class_='') %}
+  <div class="form-group">
+    {% if label_visible %}
+      {{ field.label(class_="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}
+    {% endif %}
+    {{ field(class_=class_ + " " + ("border-red-500" if field.errors else "border-gray-300 dark:border-gray-600"), **kwargs) }}
+    {% if field.errors %}
+      <ul class="text-red-500 text-xs italic mt-1">
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endmacro %}
+

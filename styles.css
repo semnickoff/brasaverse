@@ -1,0 +1,20 @@
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.dark-mode {
+  background-color: #1a202c;
+  color: #a0aec0;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #1a202c;
+}
+
