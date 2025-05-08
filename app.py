@@ -1,1 +1,7 @@
-print("Implementando funcionalidades administrativas e notificações...")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "Implementando funcionalidades administrativas e notificações..."
