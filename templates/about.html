@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Sobre Mim</h1>
+    
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-8">
+        <p class="text-lg leading-relaxed mb-4">
+            Olá! Sou um desenvolvedor apaixonado por criar soluções web inovadoras e eficientes. 
+            Tenho experiência em diversas tecnologias e estou sempre em busca de novos desafios 
+            para expandir meu conhecimento e contribuir para projetos significativos.
+        </p>
+        <p class="text-lg leading-relaxed mb-4">
+            Este portfólio é uma amostra do meu trabalho e das minhas habilidades. Aqui você encontrará 
+            projetos que demonstram minha capacidade de desenvolver desde aplicações front-end interativas 
+            até sistemas back-end robustos.
+        </p>
+        <p class="text-lg leading-relaxed">
+            Minhas principais áreas de interesse incluem desenvolvimento full-stack, design de interfaces 
+            intuitivas e a aplicação de boas práticas de engenharia de software para garantir a 
+            qualidade e a manutenibilidade dos projetos.
+        </p>
+        <!-- Conteúdo adicional sobre habilidades, experiência, etc., pode ser adicionado aqui -->
+        <!-- Este conteúdo poderá ser gerenciado pelo painel administrativo futuramente -->
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Currículo</h2>
+        <p class="mb-4">Para mais detalhes sobre minha trajetória profissional e acadêmica, você pode baixar meu currículo em formato PDF.</p>
+        {% if resume_exists %}
+            <a href="{{ url_for(\'main.download_resume\
+', filename=resume_filename) }}" 
+               class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                Baixar Currículo (PDF)
+            </a>
+        {% else %}
+            <p class="text-red-500">O arquivo do currículo ainda não foi disponibilizado. Por favor, verifique novamente mais tarde.</p>
+        {% endif %}
+        <!-- O admin poderá fazer upload do currículo pelo painel -->
+    </div>
+
+</div>
+{% endblock %}
+

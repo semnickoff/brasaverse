@@ -1,0 +1,35 @@
+{% extends "admin/dashboard.html" %}
+
+{% block content %}
+    <h2>Mensagens de Contato</h2>
+    {% if messages %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Mensagem</th>
+                    <th>Data</th>
+                    <th>Ações</th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for msg in messages %}
+                    <tr>
+                        <td>{{ msg.name }}</td>
+                        <td>{{ msg.email }}</td>
+                        <td>{{ msg.message }}</td>
+                        <td>{{ msg.sent_at|datetimeformat }}</td>
+                        <td>
+                            <!-- Adicionar links para ações como marcar como lida/não lida, responder, excluir -->
+                            <a href="#">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Nenhuma mensagem de contato encontrada.</p>
+    {% endif %}
+{% endblock %}
+
